@@ -10,7 +10,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-TOKEN = "1268034504:AAH0rzkFXpCs0XESJZBNj76sNZ0vRDOOx3g"
+TOKEN = ""
 def start(update, context):
     update.message.reply_text('Hi!'+"  "+str(update.message.from_user.username))
     context.bot.send_message(chat_id=update.effective_chat.id , text="use /help to know more")
@@ -25,15 +25,6 @@ def randcat(update, context):
     context.bot.sendPhoto(chat_id=update.effective_chat.id,photo=contents[0]['url'])
 
 
-def randomfact(update,context):
-    url = "https://numbersapi.p.rapidapi.com/random/date"
-    querystring = {"max": "20", "fragment": "true", "min": "10", "json": "true"}
-    headers = {
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com",
-        'x-rapidapi-key': "b0d868a5e5msh6e7d002462710bdp19baacjsn88068357c863"
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring).json()
-    context.bot.send_message(chat_id=update.effective_chat.id,text=response["text"])
 
 def adviceplz(update, context):
     contents = requests.get('https://api.adviceslip.com/advice').json()
@@ -56,8 +47,8 @@ def message(update, context):
     querystring = {"term": update.message.text}
 
     headers = {
-        'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com",
-        'x-rapidapi-key': "b0d868a5e5msh6e7d002462710bdp19baacjsn88068357c863"
+        'x-rapidapi-host': "",
+        'x-rapidapi-key': ""
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring).json()
@@ -75,7 +66,6 @@ def main():
     updater = Updater(TOKEN, use_context=True)
 
     dp = updater.dispatcher
-    dp.add_handler(CommandHandler('randomfact', randomfact))
     dp.add_handler(CommandHandler('adviceplz',adviceplz))
 
     dp.add_handler(CommandHandler("start", start))
@@ -91,7 +81,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://shrouded-hollows-46047.herokuapp.com/' + TOKEN)
+    updater.bot.setWebhook('' + TOKEN)
 
     updater.idle()
 
