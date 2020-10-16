@@ -6,4 +6,4 @@ and get ur telegram bot token from telegram bot father and paste ur token in thi
 
 If ur new how to deploy in heroku check this website https://towardsdatascience.com/how-to-deploy-a-telegram-bot-using-heroku-for-free-9436f89575d2.
 check this bot at t.me/firstudemybot
-I have placed spaces which u have place ur api keys and deploy it  enjoy ur first simple telegram bot 😁👍
+I have placed spaces which u have to place ur api keys and deploy it enjoy ur first simple telegram bot 😁👍
