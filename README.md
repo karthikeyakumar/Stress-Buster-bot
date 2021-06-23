@@ -1,4 +1,4 @@
-# MixedApi's-telegram-bot-
+# StressBuster-telegram-bot-
 This bot provides meanings and gives advice's and gets a  dog and cat photo's to your screen
 
 This bot gets data from the apis i have used urban dictionary api from www.rapidapi.com form this website u can get api directly from that offical website of urban api
